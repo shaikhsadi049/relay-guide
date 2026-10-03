@@ -1,0 +1,5 @@
+# Serve every file byte for byte. Git on Windows otherwise offers to turn LF
+# into CRLF, which would corrupt the PDF and change the bytes a browser downloads.
+* -text
+*.pdf binary
+*.png binary

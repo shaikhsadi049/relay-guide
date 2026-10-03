@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relay — User Guide</title>
+<meta name="description" content="The complete user guide for Relay, a fully automated XAUUSD expert advisor for MetaTrader 5. Read it online or download the PDF.">
+<link rel="icon" href="favicon.png">
+<style>
+  :root{
+    --bg:#0e1116; --panel:#151a21; --line:#232b36;
+    --ink:#e8edf4; --dim:#9aa7b8; --accent:#d8a53a; --accent-ink:#1a1206;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f6f7f9; --panel:#ffffff; --line:#e2e6ec;
+      --ink:#161a20; --dim:#5a6878; --accent:#9a6f12; --accent-ink:#ffffff;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 16px}
+  header{padding:56px 0 28px;text-align:center}
+  .logo{width:84px;height:84px;border-radius:18px;display:block;margin:0 auto 18px}
+  h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 8px;letter-spacing:-.02em}
+  .tag{color:var(--dim);font-size:17px;margin:0 0 4px}
+  .sub{color:var(--dim);font-size:14px;margin:10px 0 0}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:28px 0 8px}
+  a.btn{
+    display:inline-block;padding:13px 22px;border-radius:10px;text-decoration:none;
+    font-weight:600;font-size:15px;border:1px solid var(--line);
+  }
+  a.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+  a.ghost{background:var(--panel);color:var(--ink)}
+  a.btn:hover{filter:brightness(1.08)}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:18px 0}
+  h2{font-size:19px;margin:0 0 12px;letter-spacing:-.01em}
+  ul{margin:0;padding-left:20px}
+  li{margin:7px 0}
+  .reader{margin:18px 0}
+  .reader iframe{width:100%;height:78vh;min-height:520px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  .note{color:var(--dim);font-size:13.5px;margin:10px 0 0}
+  footer{color:var(--dim);font-size:13px;text-align:center;padding:34px 0 56px;line-height:1.7}
+  code{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:13px}
+  a{color:var(--accent)}
+  @media (max-width:600px){ header{padding:36px 0 20px} .reader iframe{height:66vh} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img class="logo" src="logo.png" alt="Relay">
+  <h1>Relay — User Guide</h1>
+  <p class="tag">A fully automated XAUUSD expert advisor for MetaTrader&nbsp;5.</p>
+  <p class="sub">One position at a time · a stop loss on every trade · no grid, no martingale</p>
+  <div class="actions">
+    <a class="btn primary" href="Relay_User_Guide.pdf">Download the PDF</a>
+    <a class="btn ghost" href="#read">Read it here</a>
+  </div>
+</header>
+
+<section>
+  <h2>What the guide covers</h2>
+  <ul>
+    <li>every input in the dialog, grouped as the dialog groups them</li>
+    <li>how the lot size is decided, and what each risk profile actually trades on your balance</li>
+    <li>the three engines — trend, fast and quiet-market — and what switching one off costs</li>
+    <li>prop firm mode: describing your firm's daily and total limits in the firm's own terms</li>
+    <li>the news filter and the local calendar file it reads</li>
+    <li>the dashboard, the chart theme and the trade markers</li>
+    <li>what a bad run looks like in both directions, stated honestly</li>
+  </ul>
+</section>
+
+<div class="reader" id="read">
+  <iframe src="Relay_User_Guide.pdf" title="Relay User Guide"></iframe>
+  <p class="note">If the viewer above is blank, your browser is set not to display
+  PDFs inline — use <b>Download the PDF</b> instead. Nothing is missing from the
+  file; it is the same document.</p>
+</div>
+
+<section>
+  <h2>Before you attach it</h2>
+  <ul>
+    <li><b>Symbol:</b> XAUUSD, under whatever name your broker gives it. Two-digit and three-digit gold contracts are both handled.</li>
+    <li><b>Timeframe:</b> any. The engines read the timeframes they need for themselves.</li>
+    <li><b>Account:</b> hedging or netting, any balance.</li>
+    <li><b>No DLLs, no WebRequest, no external dependency.</b> The news filter reads a local file, <code>Relay_News.csv</code>, from the terminal's <i>Files</i> folder.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Questions and bug reports: <a href="mailto:shaikhsadi049@gmail.com">shaikhsadi049@gmail.com</a><br>
+  Please include your broker, your account type and the terminal's log for the day in question.</p>
+  <p>Trading leveraged products carries a substantial risk of loss and is not suitable for every investor.<br>
+  Past performance, including any backtest, does not guarantee future results. Nothing here is financial advice.</p>
+</footer>
+
+</div>
+</body>
+</html>
